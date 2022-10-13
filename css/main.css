@@ -1,0 +1,163 @@
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700&family=Lexend+Deca&family=Manrope:wght@500;700&display=swap');
+
+* { box-sizing: border-box;}
+
+html, body{
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: hsl(210, 46%, 95%);
+    font-family: 'Manrope', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: hsl(217, 19%, 35%);
+}
+
+/*MAIN*/
+.main{
+    max-width: 70vw;
+    /*min-height: 20rem;*/
+    display: flex;
+    justify-content: space-between;
+    box-shadow: 3px 3px 50px gray;
+    border-radius: 1rem;
+}
+
+@media screen and (max-width: 768px) {
+    .main {
+        flex-direction: column;
+    }
+}
+
+
+/*IMAGE*/
+.image{
+    background-image: url(../images/drawers.jpg);
+    background-size: cover;
+    background-position: center;
+    flex-basis: 40%;
+    border-radius: .4rem 0 0 .4rem;
+}
+
+@media screen and (max-width: 768px) {
+    .image {
+        padding: 10rem;
+        border-radius: 1rem 1rem 0 0;
+    }
+}
+
+/*CONTENT*/
+.content{
+    flex-basis: 60%;
+    background-color: white;
+    padding: 2.2rem;
+    border-radius: 0 .4rem .4rem 0;
+}
+
+@media screen and (max-width: 768px) {
+    .content {
+        border-radius: 0 0 .4rem .4rem;
+    }
+}
+
+.content_title{
+    margin-top: 0;
+}
+
+.content_description{
+    color: hsl(214, 17%, 51%);
+}
+
+/*INFO*/
+.info{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1.7rem;
+}
+
+.author{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.author_avatar{
+    width: 40px;
+    height: 100%;
+    border-radius: 50%;
+}
+
+.author_info * {
+    margin: 0;
+}
+
+.author_info_name{
+    font-weight: bold;
+    font-size: .8rem;
+}
+
+.author_info_date{
+    font-size: .5rem;
+    font-weight: lighter;
+}
+
+.share {
+    position: relative;
+}
+
+.tooltip{
+    position: absolute;
+    top: -50px;
+    left: -5.18rem;
+    background-color: hsl(217, 19%, 35%);
+    padding: .65rem 1rem;
+    border-radius: .3rem;
+    color: hsl(210, 46%, 95%);
+    gap: 1rem;
+    display: flex;
+    justify-content: space-between;
+    justify-items: flex-start;
+    box-shadow: 2px 2px 50px gray;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .6s ease-in;
+}
+
+.tooltip.active{
+    opacity: 1;
+    visibility: visible;
+}
+
+.tooltip::before{
+    content: "";
+    position: absolute;
+    width: .7rem;
+    height: .7rem;
+    background-color:  rgb(72, 85, 106);
+    top: 2.18rem;
+    left: calc(50% - .2rem);
+    transform: rotate(45deg);
+}
+
+.tooltip_text{
+    font-size: .7rem;
+    letter-spacing: .3rem;
+}
+
+.tooltip_link{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.share_icon{
+    padding: .7rem;
+    background-color: lightgray;
+    border-radius: 50%;
+    cursor: pointer;
+}
